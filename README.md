@@ -53,15 +53,15 @@
 Структура вашего репозитория должна быть следующей:
 
 root/
-├── backend/         # Django проект
-│   ├── manage.py
-│   ├── requirements.txt
-│   └── <ваши файлы приложения>
-├── frontend/        # React проект
-│   ├── package.json
-│   ├── public/
-│   └── src/
-├── README.md
+- backend/         # Django проект
+  - manage.py
+  - requirements.txt
+  - <файлы приложения>
+- frontend/        # React проект
+  - package.json
+  - public/
+  - src/
+- README.md
 
 ## Критерии оценки
 
