@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${CONFIG__DB_NAME}
+      POSTGRES_USER: ${CONFIG__DB_USER}
+      POSTGRES_PASSWORD: ${CONFIG__DB_PASS}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: django-web
+    command: ["sh", "-c", "wait-for-it db:5432 -- python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      CONFIG__SECRET_KEY: ${CONFIG__SECRET_KEY}
+      CONFIG__DEBUG: ${CONFIG__DEBUG}
+      CONFIG__PROJECT_DOMAIN_NAME: ${CONFIG__PROJECT_DOMAIN_NAME}
+      CONFIG__DB_NAME: ${CONFIG__DB_NAME}
+      CONFIG__DB_USER: ${CONFIG__DB_USER}
+      CONFIG__DB_PASS: ${CONFIG__DB_PASS}
+      CONFIG__DB_HOST: ${CONFIG__DB_HOST}
+      CONFIG__DB_PORT: ${CONFIG__DB_PORT}
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:

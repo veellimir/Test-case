@@ -1,0 +1,168 @@
+/* Общии стили */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+}
+
+:root {
+  --body-backround-color: rgb(40, 44, 52);
+  --success-status: #4caf50;
+  --error-status: #f44336;
+  --btn-blue: #2575fc;
+  --success-btn-hover: #6a11cb;
+}
+
+body { background:  var(--body-backround-color)}
+
+span { font-size: 1.2em; margin-right: 5px; }
+
+.title {
+  font-size: 1.5em;
+  margin: 5px 0;
+}
+
+.container__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.task-status .completed {
+  color: var(--success-status);
+  font-weight: bold;
+}
+
+.task-status .not-completed {
+  color: var(--error-status);
+  font-weight: bold;
+}
+
+.message_success,
+.message_error {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  background: #e8f5e9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: bold;
+  animation: slideIn 0.5s ease-out;
+  z-index: 999;
+}
+.message_success { color: var(--success-status); }
+.message_error { color: var(--error-status); }
+
+
+/* Блок кнопки */
+.success_button {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: var(--btn-blue);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-lower {
+  padding: 7px;
+  border-radius: 2px;
+  background: none;
+}
+.btn-for-danger { background: var(--error-status); }
+
+.success_button:hover { background-color: var(--success-btn-hover); }
+
+.btn_update_del { font-size: 0.7em; }
+
+/* Конец Блок кнопки */
+
+/* Поле ввода */
+.field_input {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-lower {
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 2px;
+}
+
+.field_input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+}
+/* Конец Поле ввода */
+
+
+/* Авторизация  */
+.auth_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth_title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background: none;
+}
+
+.auth_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Конец блока Авторизация  */
+
+
+
+@media (max-width: 600px) {
+  .success_button { font-size: 0.9rem; }
+
+  .field_input { font-size: 0.9rem; }
+
+  .auth_container { padding: 10px; }
+
+  .auth_title { font-size: 1.5rem; }
+  
+  .auth_form { padding: 15px; }
+  
+}

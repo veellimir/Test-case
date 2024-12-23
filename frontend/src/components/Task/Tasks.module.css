@@ -1,0 +1,116 @@
+/* Стили для задач */
+
+.tasks_board {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: auto; 
+  background-color: #333;
+}
+  
+.tasks_column {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks_column h2 {
+  color: #e0e0e0;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.task_card {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+  
+.task_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.task_title {
+  color: #e0e0e0;
+  font-size: 1.6em;
+}
+  
+.task_card h3 {
+  font-size: 18px;
+  color: #fcfcfc;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+  
+.task_card p {
+  font-size: 14px;
+  color: #a6d538;
+  margin-bottom: 10px;
+}
+  
+
+.tasks_filters {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.default_button {
+  background-color: #f3f4f6;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.default_button:hover {
+  background-color: #e2e8f0;
+  color: #111;
+}
+
+.active_button {
+  background-color: #2563eb;
+  color: #fff;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.active_button:hover { background-color: #1d4ed8; }
+  
+  
+@media (max-width: 768px) {
+    .tasks_board { flex-direction: column; }
+  
+    .tasks_column { margin-bottom: 20px; }
+  
+    .task_card { padding: 12px; }
+}
+
+  

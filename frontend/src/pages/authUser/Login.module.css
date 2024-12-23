@@ -1,0 +1,12 @@
+.register_link_container {
+    margin-top: 15px;
+    text-align: center;
+}
+  
+.register_link {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+.registerLink:hover { text-decoration: underline; }
